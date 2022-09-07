@@ -1,0 +1,365 @@
+@import "styles/mixins/mixins";
+
+.root {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 12345;
+  isolation: isolate;
+}
+
+.header_section {
+  position: relative;
+  padding-block: 18px;
+  border-bottom: 1px solid #CACDD8;
+  background-color: var(--white);
+
+  @media (max-width: $breakpoint992) {
+    background-color: var(--brand);
+    border-bottom: 1px solid var(--brand);
+    padding-block: 12px;
+  }
+}
+
+.header {
+  @include flex(center, space-between);
+  @include container;
+  gap: 32px;
+  position: relative;
+
+  @media (max-width: $breakpoint1450) {
+    gap: 16px;
+  }
+
+  @media (max-width: $breakpoint568) {
+    gap: 8px;
+  }
+}
+
+.nav_li {
+  @include flex-start(flex-start);
+  flex-direction: column;
+
+  > button {
+    @include flex-between(center);
+  }
+
+  @include breakpoint992max {
+    padding-block: 8px;
+  }
+}
+
+.navbar__submenu {
+  display: block;
+  background-color: var(--white);
+  padding-left: 14px;
+  margin-top: 6px;
+  @include breakpoint992min {
+    display: none;
+  }
+}
+
+.arrow {
+  @include flex-center(center);
+  > svg {
+    @include rectangle(20);
+    transform: rotate(-180deg);
+  }
+}
+
+.Navbar {
+  position: relative;
+  margin-right: auto;
+  width: 100%;
+  z-index: 123;
+
+  @media (max-width: $breakpoint992) {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    box-shadow: var(--card-shadow);
+  }
+
+  > ul {
+    @include flex(center, flex-start);
+    gap: 24px;
+    @media (max-width: $breakpoint1450) {
+      gap: 16px;
+    }
+    @media (max-width: $breakpoint992) {
+      @include flex-column(flex-start, flex-start);
+      gap: 0;
+      @include maxWidth(436);
+      background-color: var(--white);
+      border-top: 1px solid #CACDD8;
+      padding: 75px 26px 0 24px;
+      height: 100vh;
+      animation: fade-right 200ms ease;
+      position: fixed;
+
+      > li {
+        @include flex-center(flex-start);
+        width: 100%;
+        padding-left: 8px;
+        padding-block: 8px;
+      }
+
+      > button {
+        margin-right: auto;
+      }
+
+      > li:first-child {
+        border-top: 1px solid #CACDD8;
+        padding-top: 14px;
+      }
+    }
+
+    @media (max-width: $breakpoint568) {
+      @include maxWidth(350);
+    }
+
+    @media (max-width: $breakpoint480) {
+      @include maxWidth(300);
+    }
+
+    > li {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+
+      &:hover {
+        color: var(--brand);
+      }
+
+      > button {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+
+    > button {
+      @include outlineBtn();
+    }
+  }
+
+  > div {
+    @include dropEffectToUp(300);
+    left: -85px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.searchField {
+  @media (min-width: 992px) {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1234;
+    padding-top: 50px;
+  }
+
+  @media (max-width: $breakpoint992) {
+    display: inline;
+    width: 100%;
+  }
+
+}
+
+.searchIcon {
+  @include flex-center(center);
+  @include rectangle(40);
+  padding: 4px;
+  border-radius: 100vmax;
+  @media (max-width: $breakpoint992) {
+    display: none;
+  }
+
+
+  &:hover {
+    background-color: var(--light-blue);
+  }
+}
+
+
+.Basket {
+  position: relative;
+  cursor: pointer;
+  margin-top: 10px;
+
+  > button {
+
+    @media (max-width: $breakpoint992) {
+
+      > svg path {
+        fill: var(--white);
+      }
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+
+    &:focus {
+      background-color: transparent;
+    }
+
+    > span {
+      @include rectangle(16);
+      @include flex(center, center);
+      padding: 4px;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 15px;
+      color: var(--white);
+      background-color: var(--brand);
+      position: absolute;
+      top: -7px;
+      right: -9px;
+
+      @media (max-width: $breakpoint992) {
+        background-color: var(--white);
+        color: var(--brand);
+      }
+    }
+  }
+}
+
+.logout {
+  color: var(--red);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.userAvatar {
+  >  svg {
+    circle {
+      stroke: var(--brand);
+    }
+
+    path {
+      fill: var(--brand);
+    }
+  }
+}
+
+.Avatar {
+  position: relative;
+  isolation: isolate;
+  @include rectangle(32);
+  @media (max-width: $breakpoint568) {
+    margin-left: 8px;
+  }
+
+  > button {
+    cursor: pointer;
+    @include flex-center(center);
+    background-color: var(--white);
+
+    &:active {
+      background-color: var(--white);
+    }
+    &:focus {
+      background-color: var(--white);
+    }
+    @media (max-width: $breakpoint992) {
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      > * {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+
+  > div {
+    @include dropEffect(300);
+    background-color: var(--white);
+    right: -10px;
+    min-width: 230px;
+    padding: 24px;
+    > a, div {
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 200%;
+      color: var(--black);
+      transition: color 200ms;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    > button {
+      margin-top: 12px;
+    }
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    left: -500px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+
+// skeleton styles
+.header__skeleton {
+  @include container;
+  @include flex-between(center);
+  height: 46px;
+  gap: 32px;
+}
+
+.logo__skeleton {
+  background: linear-gradient(90deg, #e8e8e8 0px, #f8f8f8 40px, #e8e8e8 80px);
+  animation: animation 2.5s infinite;
+  @include rectangle(40);
+  border-radius: 4px;
+}
+
+.nav__skeleton {
+  @include flex-start(center);
+  gap: 24px;
+  margin-right: auto;
+  > span {
+    width: 100px;
+    height: 16px;
+    background: linear-gradient(90deg, #e8e8e8 0px, #f8f8f8 40px, #e8e8e8 80px);
+    animation: animation 2.5s infinite;
+    border-radius: 4px;
+  }
+}
+
+.user__skeleton {
+  @include flex-end(center);
+  gap: 24px;
+
+  > span {
+    background: linear-gradient(90deg, #e8e8e8 0px, #f8f8f8 40px, #e8e8e8 80px);
+    animation: animation 2s infinite;
+    @include rectangle(32);
+    border-radius: 100vmax;
+  }
+}
+@keyframes animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

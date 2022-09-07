@@ -1,0 +1,50 @@
+.button {
+  display: none;
+  @media (max-width: 991.98px) {
+    display: inline-block;
+  }
+}
+
+.showMobileMenu {
+  display: none;
+  @media (max-width: 991.98px) {
+    display: inline-block;
+    position: absolute;
+    left: 380px;
+    top: -20px;
+    z-index: 12345;
+    animation: fade-right 200ms ease;
+  }
+
+  @media (max-width: 567.98px) {
+    left: 298px;
+    animation: fade-right2 200ms ease;
+  }
+
+  @media (max-width: 480px) {
+    left: 245px;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    left: -500px;
+  }
+  100% {
+    opacity: 1;
+    left: 380px;
+
+  }
+}
+
+@keyframes fade-right2 {
+  0% {
+    opacity: 0;
+    left: -500px;
+  }
+  100% {
+    opacity: 1;
+    left: 245px;
+  }
+}

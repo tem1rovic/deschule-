@@ -1,0 +1,249 @@
+@use 'sass:math';
+
+// =---------------- CONTAINER ------------------=
+$containerWidth: 1400;
+$containerPadding: 40;
+$containerSidePadding: math.div($containerPadding, 2);
+$breakpoint1450: 1449.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint568: 567.98 + px;
+$breakpoint480: 479.98 + px;
+
+@mixin container {
+  max-width: ($containerWidth + $containerPadding) + px !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+  padding-inline: $containerSidePadding + px !important;
+
+  @media (max-width: $breakpoint1450) {
+    max-width: 1200px;
+  }
+  @media (max-width: $breakpoint992) {
+    max-width: 960px;
+    padding-inline: 25px;
+  }
+  @media (max-width: $breakpoint768) {
+    max-width: 740px;
+    padding-inline: 20px;
+  }
+  @media (max-width: $breakpoint568) {
+    max-width: none;
+    padding-inline: 8px !important;
+  }
+}
+
+
+
+
+// ------------------ flex -------------------
+
+@mixin flex($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-around($align) {
+  display: flex;
+  align-items: $align;
+  justify-content: space-around;
+}
+
+@mixin flex-evenly($align) {
+  display: flex;
+  align-items: $align;
+  justify-content: space-evenly;
+}
+
+@mixin flex-between($align) {
+  display: flex;
+  align-items: $align;
+  justify-content: space-between;
+}
+
+@mixin flex-end($align) {
+  display: flex;
+  align-items: $align;
+  justify-content: flex-end;
+}
+
+@mixin flex-start($align) {
+  display: flex !important;
+  align-items: $align !important;
+  justify-content: flex-start !important;
+}
+
+// -------------------- width -------------------
+
+@mixin width($width) {
+  max-width: $width+px;
+  min-width: $width+px;
+}
+
+@mixin maxWidth($width) {
+  max-width: $width+px !important;
+  width: 100%;
+}
+
+@mixin makeRectangle($width-height) {
+  width: $width-height+px;
+  min-width: $width-height+px;
+  height: $width-height+px;
+  min-height: $width-height+px;
+}
+
+// ------------------ grid ---------------------
+
+@mixin grid($repeat) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+
+  @media (max-width: $breakpoint1450) {
+    grid-template-columns: repeat($repeat, 1fr);
+  }
+  @media (max-width: $breakpoint992) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: $breakpoint768) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: $breakpoint568) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+// ---------------- other -----------------
+@mixin dropEffect($duration) {
+  position: absolute;
+  animation: fade-down $duration+ms ease;
+  top: 40px;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  overflow: hidden;
+
+  @keyframes fade-down {
+    0% {
+      opacity: 0;
+      top: 0;
+    }
+    100% {
+      opacity: 1;
+      top: 40px;
+    }
+  }
+}
+
+@mixin dropEffectToUp($duration) {
+  position: absolute;
+  animation: fade-up $duration+ms ease;
+  top: 58px;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  overflow: hidden;
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      top: 100px;
+    }
+    100% {
+      opacity: 1;
+      top: 58px;
+    }
+  }
+}
+
+@mixin debugging {
+  outline: 1px solid green !important;
+  background-color: rgba(0, 128, 0, 0.1) !important;
+  color: #ffffff !important;
+  border: transparent;
+}
+
+@mixin line-clamp($clamp, $box-orient) {
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp;
+  -webkit-box-orient: $box-orient;
+  overflow: hidden;
+}
+
+@mixin line-clamp-vertical($clamp) {
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// =--------------- MEDIA QUERY max -------------------=
+@mixin breakpoint-max-480 {
+  @media (max-width: $breakpoint480) {
+    @content
+  }
+}
+
+@mixin breakpoint-max-568 {
+  @media (max-width: $breakpoint568) {
+    @content
+  }
+}
+
+@mixin breakpoint-max-768 {
+  @media (max-width: $breakpoint768) {
+    @content
+  }
+}
+
+
+@mixin breakpoint-max-992 {
+  @media (max-width: $breakpoint992) {
+    @content
+  }
+}
+
+@mixin breakpoint-max-1450 {
+  @media (max-width: $breakpoint1450) {
+    @content
+  }
+}
+
+// =--------------- MEDIA QUERY min -------------------=
+
+@mixin breakpoint-min-480 {
+  @media (min-width: $breakpoint480) {
+    @content
+  }
+}
+
+@mixin breakpoint-min-568 {
+  @media (min-width: $breakpoint568) {
+    @content
+  }
+}
+
+@mixin breakpoint-min-768 {
+  @media (min-width: $breakpoint768) {
+    @content
+  }
+}
+
+
+@mixin breakpoint-min-992 {
+  @media (min-width: $breakpoint992) {
+    @content
+  }
+}
+
+@mixin breakpoint-min-1450 {
+  @media (min-width: $breakpoint1450) {
+    @content
+  }
+}

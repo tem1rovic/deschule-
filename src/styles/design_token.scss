@@ -1,0 +1,31 @@
+// Colors
+:root {
+  --brand: #0156FF;
+  --brandDark: #0245c9;
+  --dark-blue: #272560;
+  --dark: #020203;
+  --white: #ffffff;
+  --black: #000000;
+  --light-blue: #F5F7FF;
+  --light-blue-darker: #cbcff8;
+  --orange: #FFB800;
+  --dark-cyan: #01A4FF;
+  --gray: #A2A6B0;
+  --dark-gray: #666666;
+  --light-gray: #CACDD8;
+  --red: #C94D3F;
+  --green: #78A962;
+
+  // gradient
+  --footer-gradient: radial-gradient(50% 50% at 50% 50%, #242528 0%, #040404 100%);
+  --blue-gradient: linear-gradient(180deg, #0074BE 0%, #005EAD 50.52%, #003189 100%);
+
+  // shadows
+  --shadow: 0px 5px 15px rgba(0, 0, 0, 0.14);
+  --card-shadow: 0px 5px 15px rgba(0, 0, 0, 0.14);
+
+  // others
+  --transitionDuraction: 200ms;
+
+  --font-main: 'Poppins';
+}

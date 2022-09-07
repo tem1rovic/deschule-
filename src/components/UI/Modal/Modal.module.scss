@@ -1,0 +1,44 @@
+@import "styles/mixins/mixins.scss";
+
+.root {
+  @include flex-center(center);
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 234345;
+  animation: fade-on 300ms;
+}
+
+.content {
+  position: relative;
+  @include maxWidth(600);
+  background-color: var(--white);
+  animation: fade-down 300ms;
+  padding: 48px 48px 24px;
+  border-radius: 8px;
+}
+
+.icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+@keyframes fade-down {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-on {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

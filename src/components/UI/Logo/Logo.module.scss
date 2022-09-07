@@ -1,0 +1,67 @@
+@import "styles/mixins/mixins.scss";
+
+
+// =------------------ when desktop styles ----------------=
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--green3);
+  font-size: 32px;
+  font-weight: 600;
+
+  @media (max-width: $breakpoint992) {
+    position: absolute;
+    top: -44px;
+    left: 20px;
+    background-color: var(--brand);
+    padding: 10px 21px 18px 21px;
+    border-radius: 50% 50% 20px 20px;
+    z-index: 12345;
+
+    > svg {
+      width: 18px;
+      height: 24px;
+      path {
+        fill: var(--white);
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint568) {
+    left: 10px;
+  }
+
+}
+
+// =--------------- when mobile styles --------------=
+.mobile {
+  @media (max-width: $breakpoint992) {
+    position: absolute;
+    top: -40px;
+    left: 5px;
+    background-color: var(--white);
+    padding: 10px 21px 0 21px;
+    z-index: 12345;
+    animation: fade-right 200ms ease;
+
+    > svg {
+      width: 28px;
+      height: 34px;
+      path {
+        fill: var(--brand);
+      }
+    }
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    left: -500px;
+  }
+  100% {
+    opacity: 1;
+    left: 5px;
+  }
+}

@@ -1,0 +1,53 @@
+@import "mixins";
+
+.hero {
+
+}
+
+.hero__content {
+  @include container;
+  @include flex-between(center);
+}
+
+.hero__content_info_title {
+  > h1 {
+    font-weight: 700;
+    font-size: 144px;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  > h2 {
+    font-weight: 800;
+    font-size: 160px;
+    color: #ADADAD;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+}
+
+.hero__content_info {
+  > h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 131.4%;
+    @include maxWidth(633);
+    margin-bottom: 18px;
+  }
+
+  > p {
+    @include maxWidth(505);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140.9%;
+    margin-bottom: 28px;
+    margin-top: 22px;
+  }
+
+
+  > button {
+    @include btn_primary;
+    padding-inline: 36px;
+  }
+}

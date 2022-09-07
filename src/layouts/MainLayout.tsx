@@ -6,8 +6,9 @@ const Header = dynamic(() => import("components/Header/Header"))
 const Footer = dynamic(() => import("components/Footer/Footer"))
 
 interface MainLayoutProps {
-    data: any,
-    seo_data: any
+    data?: any,
+    seo_data?: any,
+    children: ReactNode
 }
 
 const MainLayout: FC<MainLayoutProps> = memo(({ children, data, seo_data}) => {
@@ -25,15 +26,18 @@ const MainLayout: FC<MainLayoutProps> = memo(({ children, data, seo_data}) => {
     return (
         <>
             <Head>
-                <title>{seo?.title || 'Template app'}</title>
-                <meta property="og:title" content={seo_data?.og_title || 'example.com'} />
-                <meta name="description" content={seo_data?.description || 'example.com'} />
-                <meta name="keywords" content={seo_data?.keywords || 'example.com'} />
-                <meta property="og:url" content={seo_data?.og_url || 'example.com'} />
-                <meta property="og:type" content={seo_data?.og_type || 'example.com'} />
-                <meta property="og:description" content={seo_data?.og_description || 'example.com'} />
-                <meta property="og:site_name" content={seo_data?.og_site_name || 'example.com'} />
-                <meta property="og:image" content={seo_data?.og_image || 'example.com'} />
+                <title>DeSchule</title>
+                {/*<title>{seo?.title || 'Template app'}</title>*/}
+                {/*<meta property="og:title" content={seo_data?.og_title || 'example.com'} />*/}
+                {/*<meta name="description" content={seo_data?.description || 'example.com'} />*/}
+                {/*<meta name="keywords" content={seo_data?.keywords || 'example.com'} />*/}
+                {/*<meta property="og:url" content={seo_data?.og_url || 'example.com'} />*/}
+                {/*<meta property="og:type" content={seo_data?.og_type || 'example.com'} />*/}
+                {/*<meta property="og:description" content={seo_data?.og_description || 'example.com'} />*/}
+                {/*<meta property="og:site_name" content={seo_data?.og_site_name || 'example.com'} />*/}
+                {/*<meta property="og:image" content={seo_data?.og_image || 'example.com'} />*/}
+                <meta property="og:title" content="Articles on digital marketing and web development - Exadot"/>
+                <meta name="description" content="If you find interesting articles on the topic of digital marketing and web solution development, then you can find many useful articles on this topic on the Exadot blog."/>
             </Head>
             <Header/>
             <main> {children} </main>

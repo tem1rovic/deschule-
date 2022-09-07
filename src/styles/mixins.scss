@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 // =---------------- CONTAINER ------------------=
-$containerWidth: 1400;
+$containerWidth: 1520;
 $containerPadding: 40;
 $containerSidePadding: math.div($containerPadding, 2);
 $breakpoint1450: 1449.98 + px;
@@ -36,7 +36,7 @@ $breakpoint480: 479.98 + px;
 
 
 
-// ------------------ flex -------------------
+// ------------------ FLEXBOX -------------------
 
 @mixin flex($align, $justify) {
   display: flex;
@@ -80,7 +80,7 @@ $breakpoint480: 479.98 + px;
   justify-content: flex-start !important;
 }
 
-// -------------------- width -------------------
+// -------------------- WIDTH -------------------
 
 @mixin width($width) {
   max-width: $width+px;
@@ -99,7 +99,7 @@ $breakpoint480: 479.98 + px;
   min-height: $width-height+px;
 }
 
-// ------------------ grid ---------------------
+// ------------------ GRID ---------------------
 
 @mixin grid($repeat) {
   display: grid;
@@ -120,8 +120,22 @@ $breakpoint480: 479.98 + px;
   }
 }
 
+// =-------------- BUTTONS -------------------=
+@mixin btn_gray {
+  background: #ECECEC;
+  border-radius: 30px;
+  color: #6A6A6A;
+}
 
-// ---------------- other -----------------
+@mixin btn_primary {
+  background: var(--deutsh-gradient);
+  padding-block: 15px;
+  color: #FFFFFF;
+  border-radius: 30px;
+}
+
+
+// ---------------- OTHERS -----------------
 @mixin dropEffect($duration) {
   position: absolute;
   animation: fade-down $duration+ms ease;

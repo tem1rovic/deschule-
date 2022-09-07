@@ -1,6 +1,5 @@
 import React, {FC, memo, ReactNode} from 'react';
 import Link from "next/link";
-import styles from './A.module.scss'
 
 interface AProps {
     href: string,
@@ -11,7 +10,7 @@ interface AProps {
 const A: FC<AProps> = ({ href, children , isBtn = false }) => {
     return (
         <Link href={href}>
-            <a  className={isBtn ? styles.link : ''}>{children}</a>
+            <a>{children}</a>
         </Link>
     );
 };

@@ -32,6 +32,20 @@ h1,h2, h3, A, h5, h6 {
   padding: 0;
 }
 
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 131.4%;
+  color: var(--black);
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 175.9%;
+  color: var(--black);
+}
+
 input {
   outline: none;
   width: 100%;
@@ -48,10 +62,6 @@ input {
   }
 }
 
-main {
-  isolation: isolate;
-}
-
 button {
   cursor: pointer;
   outline: none;
@@ -60,143 +70,15 @@ button {
   line-height: 1;
 }
 
-// filter animation
-.color-select {
-  animation: padding 300ms;
-}
-
-.swiper-pagination {
-  background-color: var(--brand);
-}
-
-@keyframes padding {
-  0% {
-    padding: 0;
-  }
-
-  100% {
-    padding: 2px;
-  }
-}
-
-.swiper-pagination-bullets {
-  background-color: transparent;
-}
-
-  .swiper-pagination-bullet {
-    width: 24px;
-    height: 12px;
-    border-radius: 100%;
-    &.swiper-pagination-bullet-active {
-      background: var(--brand);
-    }
-  }
 
 // scroll-bar
 ::-webkit-scrollbar {
-  width: 6px;
-  background-color: var(--light-gray);
+  width: 8px;
+  background-color: var(--gray);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--brand);
+  background-color: var(--red);
   border-radius: 4px;
   cursor: pointer;
-}
-
-// lib react-tabs
-.react-tabs__tab {
-  padding-bottom: 3px;
-}
-
-.react-tabs__tab--selected {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 140%;
-  color: var(--black);
-  border-bottom: 2px solid var(--brand);
-  padding-bottom: 3px;
-  @media (max-width: $breakpoint768) {
-    font-size: 14px;
-  }
-}
-
-.menuActive {
-  background-color: red;
-}
-
-.main_home,
-.main_catalog {
-  padding-top: 118px;
-
-  @media (max-width: 991.98px) {
-    padding-top: 110px;
-  }
-}
-
-.main_catalog {
-  @media (max-width: 567.98px) {
-    padding-top: 130px;
-  }
-}
-
-.main_contact,
-.main_register,
-.main_shoppingCart,
-.main_about,
-.main_faq,
-.main_checkout,
-.main_dashboard {
-  padding-top: 140px;
-  @media (max-width: 991.98px) {
-    padding-top: 130px;
-  }
-}
-
-// more
-.searchEffect {
-  display: inline !important;
-  animation: fade-on 300ms;
-}
-
-
-@keyframes fade-on {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-@keyframes light {
-  0% {
-    border: 1px solid var(--red);
-  }
-  25% {
-    border: 1px solid var(--gray);
-  }
-  50% {
-    border: 1px solid var(--red);
-  }
-  75% {
-    border: 1px solid var(--gray);
-  }
-  100% {
-    border: 1px solid var(--red);
-  }
-}
-
-// =--------------- cart product item delete animation ------------=
-@keyframes scale {
-    100% {
-      transform: scale(0.9);
-    }
-}
-
-@keyframes left-anim {
-  100% {
-    transform: translateX(-300px);
-  }
 }

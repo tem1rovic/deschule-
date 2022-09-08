@@ -17,17 +17,11 @@ const Lessons2 = dynamic(() => import("container/home/Lessons2"))
 const Index: NextPage = () => {
 
     return (
-              <MainLayout >
-                  <Hero/>
-                  <About/>
-                  <Methodology/>
-                  <Lessons/>
-                  <Traveling/>
-                  <CountryInfo/>
-                  <WhatSay/>
-                  <Lessons2/>
-              </MainLayout>
-  )
+        <MainLayout >
+            <Hero/>
+            <About/>
+        </MainLayout>
+    )
 }
 
 export default Index

@@ -1,135 +1,46 @@
-@import "styles/mixins/mixins";
+@import "styles/mixins.scss";
 
 .footer {
-  background-color: var(--dark);
+  padding-block: 150px;
 }
 
-.top {
-  @include flex-between(flex-end);
-  @include container;
-  padding-block: 40px;
-
-  @media (max-width: $breakpoint768) {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  > div {
-    width: 100%;
-    > h2 {
-      font-weight: 500;
-      font-size: 38px;
-      line-height: 132.5%;
-      color: var(--white);
-      margin-bottom: 8px;
-
-      @media (max-width: $breakpoint992) {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 132.5%;
-      }
-    }
-
-    > p {
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 132.5%;
-      color: var(--white);
-
-      @media (max-width: $breakpoint992) {
-        font-weight: 300;
-        font-size: 12px;
-        line-height: 132.5%;
-      }
-    }
-
-
-    > input {
-      @include emailInput;
-      @include maxWidth(390);
-      width: 100% !important;
-    }
-
-    > button {
-      @include primaryButton;
-      margin-left: 24px;
-    }
-  }
-
-  > div:last-child {
-    @include flex(center, center);
-    @media (max-width: $breakpoint480) {
-      flex-direction: column;
-      gap: 12px;
-
-      > button {
-        width: 100%;
-        margin-left: 0;
-      }
-
-    }
-  }
-}
-
-.center {
-  @include container;
-  @include flex-between(flex-start);
-  gap: 12px;
-  padding-bottom: 36px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-  @media (max-width: $breakpoint992) {
-    flex-direction: column;
-    gap: 15px;
-    @include maxWidth(600);
-  }
-}
-
-.bottom {
+.content {
   @include container;
   @include flex-between(center);
-  padding-block: 20px;
+}
 
-  @media (max-width: $breakpoint568) {
-    flex-wrap: wrap;
+.logo {
+  @include flex-start(flex-end);
+}
+
+.logo_svg {
+  margin-bottom: -10px;
+  margin-right: -10px;
+}
+
+.logo__text {
+  > h3 {
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: var(--black);
   }
 
-  > div:first-child {
-    @include flex-between(center);
-    > a {
-      > svg path {
-        fill: var(--gray);
-      }
-
-      &:hover {
-        path {
-          fill: var(--white);
-        }
-      }
-    }
-  }
-
-  > div:nth-child(2) {
-    @include flex(center, center);
-    gap: 10px;
-    @media (max-width: $breakpoint568) {
-      order: 3;
-      @include maxWidth(460);
-      padding-inline: 20px;
-      margin-top: 16px;
-    }
-  }
-
-  > div:last-child {
-    color: var(--gray);
+  > p {
     font-weight: 500;
-    font-size: 12px;
-    line-height: 132.5%;
-
-    @media (max-width: $breakpoint480) {
-      font-size: 10px;
-    }
-
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--black);
   }
+}
+
+.info {
+  @include flex-between(center);
+  gap: 53px;
+}
+
+.social {
+  @include flex-between(center);
+  gap: 24px;
 }

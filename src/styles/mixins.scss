@@ -124,7 +124,17 @@ $breakpoint480: 479.98 + px;
 @mixin btn_gray {
   background: #ECECEC;
   border-radius: 30px;
+  padding-block: 15px;
   color: #6A6A6A;
+  transition: background-color 250ms;
+
+  &:hover {
+    background-color: #dcdcdc;
+  }
+
+  &:active {
+    background-color: #f1f1f1;
+  }
 }
 
 @mixin btn_primary {
